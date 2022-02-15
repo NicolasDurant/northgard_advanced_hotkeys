@@ -9,7 +9,7 @@ SetBatchLines, -1
 #Include ./scripts/asset_import.ahk
 
 ; NEUTRON
-; Create a new NeutronWindow and navigate to our HTML page
+; Create a new NeutronWindow and navigate to the main HTML page
 neutron := new NeutronWindow()
 neutron.Load("main.html")
 
