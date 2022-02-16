@@ -7,6 +7,8 @@ SetBatchLines, -1
 #Include ./modules/Neutron.ahk
 ; Include scripts that provide the imports and methods for NAH
 #Include ./scripts/asset_import.ahk
+#Include ./scripts/ini_controller.ahk
+#Include ./scripts/hotkey_controller.ahk
 
 ; NEUTRON
 ; Create a new NeutronWindow and navigate to the main HTML page
