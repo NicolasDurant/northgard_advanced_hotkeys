@@ -29,6 +29,18 @@ init_ini(){
 
 ; Reads the .ini file and creates an object out of it for further use
 read_ini(){
-  IniRead, names, settings.ini, village
-  MsgBox, %names%
+  ; Get the necessary variables from the global scope
+  global ini_name
+  global initial_config
+  ; Get sections
+  For key, value in initial_config
+    ; Get item and its hotkey of a section
+    For k, v in value
+    {
+      ; Create .ini file with key = value in a section
+      IniRead, OutputVar, %ini_name%, %key%, %k%
+      MsgBox, %key% %k%  "=" %OutputVar%
+      initial_config[key][k] = OutputVar
+      MsgBox, % initial_config[key][k]
+    }
 }
