@@ -8,7 +8,6 @@ SetBatchLines, -1
 ; Include scripts that provide the imports and methods for NAH
 #Include ./scripts/asset_import.ahk
 #Include ./scripts/ini_controller.ahk
-#Include ./scripts/hotkey_controller.ahk
 
 ; NEUTRON
 ; Create a new NeutronWindow and navigate to the main HTML page
@@ -47,6 +46,11 @@ for row, data in Ex4_Table2
 
 ; Show the GUI, with an initial size of 800 x 600.
 neutron.Show("w800 h600")
+; We have to activate the hotkey listeners after the Neutron Window is created.
+; Putting this include at the top of the file, would block the UI.
+; At the end of the file it wouldn't work either, because of the return.
+; TODO: make a button to activate, deactivate listeners from the UI to make hotkeys changeable at run time
+#Include ./scripts/hotkey_controller.ahk
 return
 
 
