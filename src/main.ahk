@@ -45,7 +45,7 @@ for row, data in Ex4_Table2
 }
 
 ; Show the GUI, with an initial size of 800 x 600.
-neutron.Show("w800 h600")
+neutron.Show("w1000 h800")
 ; We have to activate the hotkey listeners after the Neutron Window is created.
 ; Putting this include at the top of the file, would block the UI.
 ; At the end of the file it wouldn't work either, because of the return.

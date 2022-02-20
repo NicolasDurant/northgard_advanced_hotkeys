@@ -2,6 +2,7 @@
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\views\main.html
 ; CSS
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\styles\main.min.css
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\styles\main.css
 ; JS
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\scripts\main.min.js
 ; IMG

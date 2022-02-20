@@ -23,7 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <!-- Compressed Styles -->
     <link href="main.min.css" rel="stylesheet">
-
+    <!-- Custom Styles -->
+    <link href="main.css" rel="stylesheet">
 
     <!-- Fonts and Material Icons -->
     <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Material+Icons&display=swap"/>
@@ -39,26 +40,28 @@
     <ul></ul>
   </div>
 </nav>
+<!-- Draggable Area of Window -->
+<nav class="drag-window-bar" onmousedown="neutron.DragTitleBar()"></nav>
 <!-- Panel Top #01 -->
-<nav class="panel top" onmousedown="neutron.DragTitleBar()">
+<nav class="panel top">
   <div class="sections desktop">
     <div class="left" style="cursor: pointer;">
-      <span onclick="neutron.Minimize()">
+      <a href="#" title="Minimize" onclick="neutron.Minimize()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
         </svg>
-      </span>
-      <span onclick="neutron.Maximize()" style="margin-left: 14px;">
+      </a>
+      <a href="#" title="Maximize" onclick="neutron.Maximize()" style="margin-left: 14px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16">
           <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"/>
         </svg>
-      </span>
-      <span onclick="neutron.Close()" style="margin-left: 14px;">
+      </a>
+      <a href="#" title="Close" onclick="neutron.Close()" style="margin-left: 14px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
           <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
         </svg>
-      </span>
+      </a>
     </div>
     <div class="right">
       <ul class="menu">
@@ -67,10 +70,6 @@
       </ul>
       <a class="button blue rounded small" href="#">Start</a>
     </div>
-  </div>
-  <div class="sections compact hidden">
-    <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
-    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
   </div>
 </nav>
 
