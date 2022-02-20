@@ -62,11 +62,9 @@ return
 
 ; --- Trigger AHK by page events ---
 
-Example1_Button(neutron, event)
+maximize_window(neutron, event)
 {
-	; event.target will contain the HTML Element that fired the event.
-	; Show a message box with its inner text.
-	MsgBox, % "You clicked: " event.target.innerText
+	neutron.Maximize()
 }
 
 Example1_MouseMove(neutron, event)
