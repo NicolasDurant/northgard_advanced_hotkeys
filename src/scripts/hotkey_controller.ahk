@@ -214,11 +214,11 @@ search_build_key() {
   ImageSearch, x_build, y_build, 0, 0, A_ScreenWidth, A_ScreenHeight, categories.build
   ; error handling
   if (ErrorLevel = 2)
-      MsgBox Could not conduct the search.
+      OutputDebug, Could not conduct the search.
   else if (ErrorLevel = 1)
-      MsgBox Image could not be found on the screen.
+      OutputDebug, Image could not be found on the screen.
   else
-      MsgBox The image was found at %x_build%x%y_build%.
+      OutputDebug, The image was found at %x_build%x%y_build%.
       ; save coordinates
       x_position_build_button := x_build
       y_position_build_button := y_build
@@ -226,6 +226,9 @@ search_build_key() {
 
 ; Extracted search for the category image key and return it.
 search_category_image(category_image) {
+  ; access global variables
+  global x_position_build_button
+  global y_position_build_button
   ; interprets the coordinates below as relative to the screen rather than the active window.
   CoordMode Pixel
   ; search build key and save it globally
@@ -233,9 +236,21 @@ search_category_image(category_image) {
   ; error handling
   if (ErrorLevel = 2)
       MsgBox Could not conduct the search.
-  else if (ErrorLevel = 1)
-      MsgBox Image could not be found on the screen.
+  else if (ErrorLevel = 1){
+    OutputDebug, Image %category_image% could not be found on the screen. \n Pressing the build button and searching again.
+    ; press "build" key, because the image can't be found (menu is closed)
+    ; search build key and save it globally
+    ImageSearch, x_build, y_build, 0, 0, A_ScreenWidth, A_ScreenHeight, %category_image%
+    ; error handling
+    if (ErrorLevel = 2)
+    OutputDebug, Could not conduct the search.
+    else if (ErrorLevel = 1)
+    OutputDebug, Image %category_image% could not be found on the screen.
+    else
+    MsgBox The image was found at %x_build%x%y_build%.
+    return {x: %x_build%, y: %y_build%}
+  }
   else
-      MsgBox The image was found at %x_build%x%y_build%.
+      OutputDebug, The image was found at %x_build%x%y_build%.
       return {x: %x_build%, y: %y_build%}
 }

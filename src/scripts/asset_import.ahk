@@ -6,8 +6,8 @@
 ; JS
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\scripts\main.min.js
 ; IMG
-;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\img-10.jpg
-;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\img-11.jpg
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\home_background.jpg
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\git_background.jpg
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\video-4.jpg
 ; BUILDINGS
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\build.png
