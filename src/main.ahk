@@ -44,12 +44,11 @@ for row, data in Ex4_Table2
 	neutron.qs("#ex4_table2>tbody").appendChild(tr)
 }
 
-; Show the GUI, with an initial size of 800 x 600.
+; Show the GUI, with an initial size of 1000 x 800.
 neutron.Show("w1000 h800")
 ; We have to activate the hotkey listeners after the Neutron Window is created.
 ; Putting this include at the top of the file, would block the UI.
 ; At the end of the file it wouldn't work either, because of the return.
-; TODO: make a button to activate, deactivate listeners from the UI to make hotkeys changeable at run time
 #Include ./scripts/hotkey_controller.ahk
 return
 
@@ -62,29 +61,7 @@ return
 
 ; --- Trigger AHK by page events ---
 
-maximize_window(neutron, event)
-{
-	neutron.Maximize()
-}
-
-Example1_MouseMove(neutron, event)
-{
-	; Some events, like MouseMove, have custom attributes that can be read.
-	; offsetX and offsetY contain the mouse position relative to the event that
-	; fired the event.
-	event.target.innerText := Format("({:i}, {:i})", event.offsetX, event.offsetY)
-}
-
-Example1_MouseLeave(neutron, event)
-{
-	; Reset the text of the MouseMove example when the mouse is no longer over
-	; it.
-	event.target.innerText := "Mouse over this area!"
-}
-
-
 ; --- Update page by Hotkey ---
-
 ; Limit this hotkey to only fire while our Neutron window is the active window.
 #if WinActive("ahk_id" neutron.hWnd)
 
@@ -114,13 +91,16 @@ UpdateKeyExample(neutron, keyName, className) {
 		}
 	}
 }
-
 #if
 
 
 ; --- Pass form data to AHK ---
+; Function has to read .ini and fill the according forms with the data
+prefill_forms(){
 
-Submit(neutron, event)
+}
+
+submit_hotkeys_form(neutron, event)
 {
 	; Some events have a default action that needs to be prevented. A form will
 	; redirect the page by default, but we want to handle the form data ourself.

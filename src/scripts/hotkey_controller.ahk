@@ -178,6 +178,9 @@ return
 woodcutter:
 MsgBox %A_ThisLabel% You pressed %A_ThisHotkey%.
 return
+; deactivation
+deactivation:
+return
 
 ; Gets called whenever a registered hotkey is pressed.
 ; Receives the category image to find the category on the screen via ImageSearch.
@@ -253,4 +256,14 @@ search_category_image(category_image) {
   else
       OutputDebug, The image was found at %x_build%x%y_build%.
       return {x: %x_build%, y: %y_build%}
+}
+
+
+; Deactivate an old hotkey that got changed via user settings
+; Has to change the old registered key to KEY::return
+; and active the new key for a giving building (which)
+register_hotkey_change(old_key, new_key, which){
+      ; something along like
+      ; Hotkey, %old_key%, deactivation
+      ; Hotkey, %new_key%, which
 }
