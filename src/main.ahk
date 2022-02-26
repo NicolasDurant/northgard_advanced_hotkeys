@@ -8,6 +8,7 @@ SetBatchLines, -1
 ; Include scripts that provide the imports and methods for NAH
 #Include ./scripts/asset_import.ahk
 #Include ./scripts/ini_controller.ahk
+#Include ./scripts/form_controller.ahk
 
 ; NEUTRON
 ; Create a new NeutronWindow and navigate to the main HTML page
@@ -17,33 +18,7 @@ neutron.Load("main.html")
 ; Use the Gui method to set a custom label prefix for GUI events. This code is
 ; equivalent to the line `Gui, name:+LabelNeutron` for a normal GUI.
 neutron.Gui("+LabelNeutron")
-
-; Insert example 4 table 1 contents
-Ex4_Table1 := [["Apple", 1], ["Orange", 2]]
-html := ""
-for row, data in Ex4_Table1
-{
-	html .= "<tr>"
-	for col, cell in data
-		html .= neutron.FormatHTML("<td>{}</td>", cell)
-	html .= "</tr>"
-}
-neutron.qs("#ex4_table1>tbody").innerHTML := html
-
-; Insert example 4 table 2 contents
-Ex4_Table2 := [["Apple", 1], ["Orange", 2]]
-for row, data in Ex4_Table2
-{
-	tr := neutron.doc.createElement("tr")
-	for col, cell in data
-	{
-		td := neutron.doc.createElement("td")
-		td.innerText := cell
-		tr.appendChild(td)
-	}
-	neutron.qs("#ex4_table2>tbody").appendChild(tr)
-}
-
+prefill_forms(neutron)
 ; Show the GUI, with an initial size of 1000 x 800.
 neutron.Show("w1000 h800")
 ; We have to activate the hotkey listeners after the Neutron Window is created.
@@ -92,80 +67,6 @@ UpdateKeyExample(neutron, keyName, className) {
 	}
 }
 #if
-
-
-; --- Pass form data to AHK ---
-; Function has to read .ini and fill the according forms with the data
-prefill_forms(){
-
-}
-
-submit_hotkeys_form(neutron, event)
-{
-	; Some events have a default action that needs to be prevented. A form will
-	; redirect the page by default, but we want to handle the form data ourself.
-	event.preventDefault()
-
-	; Use Neutron's GetFormData method to process the form data into a form that
-	; is easily accessed. Fields that have a 'name' attribute will be keyed by
-	; that, or if they don't they'll be keyed by their 'id' attribute.
-	formData := neutron.GetFormData(event.target)
-
-	; You can access all of the form fields by iterating over the FormData
-	; object. It will go through them in the order they appear in the HTML.
-	out := "Access all fields by iterating:`n"
-	for name, value in formData
-		out .= name ": " value "`n"
-	out .= "`n"
-
-	; You can also get field values by name directly. Use object dot notation
-	; with the field name/id.
-	out .= "Or access individual fields directly:`n"
-	out .= "Hello " formData.firstName " " formData.lastName "!`n"
-	if formData.remember
-		out .= ""
-	else
-		out .= "You forgot to check the 'Remember Me' box :("
-
-	; Show the output
-	MsgBox, %out%
-}
-
-Submit2(neutron, event)
-{
-	event.preventDefault()
-	formData := neutron.GetFormData(event.target)
-
-	; When you iterate over a FormData object with multi-selected checkboxes or
-	; select elements, it will act like an object with duplicate keys. The same
-	; name will appear multiple times, once per selected item.
-	out := "Access all fields by iterating:`n"
-	for name, value in formData
-		out .= name ": " value "`n"
-	out .= "`n"
-
-	; Iterating over the entire set of form fields is useful in some situations,
-	; but often you'll want to just get all the options selected for a single
-	; multi-select form field. Use the FormData's .All() method to get all the
-	; values associated with one field name as a standard array.
-	out .= "Or individually:`n"
-	out .= "Foods: [ "
-	for i, food in formData.All("food")
-		out .= food " "
-	out .= "]`n"
-	out .= "Languages: [ "
-	for i, language in formData.All("favLangs")
-		out .= language " "
-	out .= "]`n"
-
-	; The FormData object will combine a group of Radios with the same name
-	; under a single entry. Grab a Radio group's value using dot or bracket
-	; notation.
-	out .= "Contact: " formData.contact "`n"
-
-	; Show the output
-	MsgBox, %out%
-}
 
 
 ; --- Dynamic Content Generation ---
