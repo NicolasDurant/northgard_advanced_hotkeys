@@ -18,7 +18,7 @@ suspend
 ; 'Enter' has the advantage that you press it once for opening the chat and
 ; again to close it. So the hotkeys automatically deactivate when you write
 ; and reactivate, when you are finished texting.
-Enter::suspend
+~Enter::suspend
 return
 
 ; VILLAGE
