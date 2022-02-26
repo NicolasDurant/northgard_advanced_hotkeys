@@ -4,3 +4,22 @@
   position: fixed;
   z-index: 20;
 }
+
+#hotkey-buildings-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.form-group {
+  position: relative;
+}
+.form-control-label {
+  position: absolute;
+  font-size: 0.5em !important;
+  top: -6px;
+  left: 12px;
+  text-transform: uppercase;
+}
+.form-control-input{
+  max-width: 120px !important;
+}

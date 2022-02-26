@@ -17,3 +17,4 @@
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\production.png
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\trading.png
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\village.png
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\house.png

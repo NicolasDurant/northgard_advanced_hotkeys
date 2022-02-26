@@ -11,7 +11,7 @@ prefill_forms(neutron){
 	  For k, v in value
 	    {
 	      ; Generate HTML dynamic input field with label for our building hotkeys
-				html := neutron.FormatHTML("<input id='{}' class='input-12 rounded ae-5 fromLeft' type='text' name='{}' value='{}'/>", k, k, v)
+				html := neutron.FormatHTML("<div class='form-group ae-5 fromLeft'><input id='{}' class='rounded form-control-input' type='text' name='{}' value='{}'/><label class='form-control-label' for='{}'>{}</label></div>", k, k, v, k, k)
 				neutron.qs("#hotkey-buildings-form").insertAdjacentHTML("afterbegin", html)
 	    }
 	}
