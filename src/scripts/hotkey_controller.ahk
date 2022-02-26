@@ -13,7 +13,7 @@ For key, value in initial_config
       Hotkey, % initial_config[key][k], %k%
     }
 ; Hotkeys have to be manually started, the programm starts in suspend mode
-suspend
+Suspend, On
 ; Register 'Enter' as Pause key for the script
 ; 'Enter' has the advantage that you press it once for opening the chat and
 ; again to close it. So the hotkeys automatically deactivate when you write
