@@ -20,7 +20,7 @@ prefill_forms(neutron){
 				neutron.qs(id).insertAdjacentHTML("afterbegin", html)
     }
 		; insert the category label which is the key of the initial config
-		html := neutron.FormatHTML("<p class='slight ae-2' style='text-transform: capitalize;'>{}</p>", key)
+		html := neutron.FormatHTML("<p class='slight ae-4' style='text-transform: capitalize;'>{}</p>", key)
 		neutron.qs(id).insertAdjacentHTML("afterbegin", html)
 	}
 }
