@@ -93,7 +93,7 @@
     <div class="container">
       <div class="wrap">
         <div class="fix-7-12">
-          <h1 class="margin-bottom-2 ae-1">Hotkeys for Buildings</h1>
+          <h1 class="margin-bottom-2 ae-1">Hotkeys for buildings</h1>
           <p class="larger light ae-2"><span class="opacity-8">Set a custom configuration for your building hotkeys. Allowed values by AutoHotkey can be found in the documentation link below.</span></p>
           <label class="button rounded blue ae-3 fromCenter" for="submit-hotkey-buildings-form" tabindex="0">Save</label>
           <a class="button rounded white ae-3 fromCenter" href="https://www.autohotkey.com/docs/Hotkeys.htm#Symbols" target="_blank">Documentation</a>
@@ -113,9 +113,42 @@
     <div class="container">
       <div class="wrap">
         <div class="fix-7-12">
-          <h1 class="smaller margin-bottom-2 ae-1">Support the developer</h1>
-          <p class="large ae-2"><span class="opacity-8">Using Northgard Advanced Hotkey regulary? <b>Awesome!</b></br> I have put a lot of hours into the project to provide a completly free and improved gaming experience for everybody. If you decide to give back a little though, you could provide me with some caffeine, so I can add more features and keep fixing bugs in the future.</span></p>
-          <a href="https://www.buymeacoffee.com/codingdurant" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy me a coffee" style="height: 60px !important;width: 217px !important;" ></a>
+          <h1 class="smaller margin-bottom-2 ae-1">Lore autoskill</h1>
+          <p class="large ae-2"><span class="opacity-8">Just click the image below in the order, in which the script should skill your lore. If you don't want to use this function uncheck the box. Disclaimer: Autoskill doesn't work for Svafnir (snake clan).</span></p>
+          <a class="button rounded blue ae-3 fromCenter" href="https://www.autohotkey.com/docs/Hotkeys.htm#Symbols" target="_blank">Save</a>
+          <a class="button rounded white ae-3 fromCenter" href="https://www.autohotkey.com/docs/Hotkeys.htm#Symbols" target="_blank">Reset</a>
+          <img class="ae-4 fromBottom" src="common_lore.png" alt="Lore" usemap="#lore" height="482" width="1028">
+          <map name="lore">
+            <!-- COLUMN 1 -->
+            <area onclick="ahk.lore_clicked(event, 'sharp_axes')" shape="rect" coords="34,47,230,94" alt="sharp_axes">
+            <area onclick="ahk.lore_clicked(event, 'weaponsmith')" shape="rect" coords="34,187,230,233" alt="weaponsmith">
+            <area onclick="ahk.lore_clicked(event, 'the_value_of_great_deeds')" shape="rect" coords="34,327,230,372" alt="the_value_of_great_deeds">
+            <!-- COLUMN 2 -->
+            <area onclick="ahk.lore_clicked(event, 'colonization')" shape="rect" coords="291,16,488,62" alt="colonization">
+            <area onclick="ahk.lore_clicked(event, 'eradication')" shape="rect" coords="291,79,488,125" alt="eradication">
+            <area onclick="ahk.lore_clicked(event, 'fur_coats')" shape="rect" coords="291,156,488,202" alt="fur_coats">
+            <area onclick="ahk.lore_clicked(event, 'defensive_strategy')" shape="rect" coords="291,219,488,256" alt="defensive_strategy">
+            <area onclick="ahk.lore_clicked(event, 'ship_building')" shape="rect" coords="291,296,488,341" alt="ship_building">
+            <area onclick="ahk.lore_clicked(event, 'coinage')" shape="rect" coords="291,359,488,404" alt="coinage">
+            <!-- COLUMN 3 -->
+            <area onclick="ahk.lore_clicked(event, 'hero_emblem')" shape="rect" coords="548,16,745,62" alt="hero_emblem">
+            <area onclick="ahk.lore_clicked(event, 'medicine')" shape="rect" coords="548,79,745,125" alt="medicine">
+            <area onclick="ahk.lore_clicked(event, 'young_and_proud')" shape="rect" coords="548,156,745,202" alt="young_and_proud">
+            <area onclick="ahk.lore_clicked(event, 'feeling_safe')" shape="rect" coords="548,219,745,256" alt="feeling_safe">
+            <area onclick="ahk.lore_clicked(event, 'erudition')" shape="rect" coords="548,296,745,341" alt="erudition">
+            <area onclick="ahk.lore_clicked(event, 'carpentry_mastery')" shape="rect" coords="548,359,745,404" alt="carpentry_mastery">
+            <!-- COLUMN 4 -->
+            <area onclick="ahk.lore_clicked(event, 'food_preservation')" shape="rect" coords="805,16,1003,62" alt="food_preservation">
+            <area onclick="ahk.lore_clicked(event, 'shiny_happy_people')" shape="rect" coords="805,79,1003,125" alt="shiny_happy_people">
+            <area onclick="ahk.lore_clicked(event, 'legendary_heroes')" shape="rect" coords="805,156,1003,202" alt="legendary_heroes">
+            <area onclick="ahk.lore_clicked(event, 'monster_slayer')" shape="rect" coords="805,219,1003,256" alt="monster_slayer">
+            <area onclick="ahk.lore_clicked(event, 'negotiation')" shape="rect" coords="805,296,1003,341" alt="negotiation">
+            <area onclick="ahk.lore_clicked(event, 'glory_of_the_clan')" shape="rect" coords="805,359,1003,404" alt="glory_of_the_clan">
+            <!-- BLESSINGS -->
+            <area onclick="ahk.lore_clicked(event, 'freya')" shape="rect" coords="220,434,416,476" alt="freya">
+            <area onclick="ahk.lore_clicked(event, 'baldr')" shape="rect" coords="425,434,621,476" alt="baldr">
+            <area onclick="ahk.lore_clicked(event, 'jord')" shape="rect" coords="631,434,827,476" alt="jord">
+          </map>
         </div>
       </div>
     </div>
