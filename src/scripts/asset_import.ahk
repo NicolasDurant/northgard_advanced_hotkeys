@@ -9,6 +9,8 @@
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\home_background.jpg
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\git_background.jpg
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\video-4.jpg
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\northgard_advanced_hotkeys_logo.png
+;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\img\northgard_advanced_hotkeys_logo_variant.ico
 ; BUILDINGS
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\build.png
 ;@Ahk2Exe-AddResource *10 %A_ScriptDir%\assets\buildings\civilians.png

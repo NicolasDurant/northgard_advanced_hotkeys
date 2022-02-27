@@ -11,6 +11,7 @@ SetBatchLines, -1
 #Include ./scripts/form_controller.ahk
 #Include ./scripts/ui_controller.ahk
 #Include ./scripts/lore_controller.ahk
+
 ; NEUTRON
 ; Create a new NeutronWindow and navigate to the main HTML page
 neutron := new NeutronWindow()
@@ -33,3 +34,6 @@ return
 NeutronClose:
 ExitApp
 return
+
+; Load custom northgard_advanced_hotkeys tray icon
+Menu, Tray, Icon, "northgard_advanced_hotkeys_logo_variant.ico"
