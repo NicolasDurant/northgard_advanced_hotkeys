@@ -7,8 +7,7 @@
 
 #hotkey-buildings-form{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .form-group {
   position: relative;
@@ -22,4 +21,8 @@
 }
 .form-control-input{
   max-width: 120px !important;
+}
+.form-column{
+  display: flex;
+  flex-direction: column;
 }

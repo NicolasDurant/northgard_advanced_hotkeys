@@ -7,13 +7,21 @@ prefill_forms(neutron){
     ; Skip civilians for now
 		if(key = "civilians")
 			continue
+		; captions with the category names
+		html := neutron.FormatHTML("<div class='form-column' id='{}'></div>", key, key)
+		neutron.qs("#hotkey-buildings-form").insertAdjacentHTML("afterbegin", html)
+		; id used as query selector which is the key
+		id = #%key%
 	  ; Get item and its hotkey of a section
 	  For k, v in value
-	    {
-	      ; Generate HTML dynamic input field with label for our building hotkeys
+    {
+				; Generate HTML dynamic input field with label for our building hotkeys
 				html := neutron.FormatHTML("<div class='form-group ae-5 fromLeft'><input id='{}' class='rounded form-control-input' type='text' name='{}' value='{}'/><label class='form-control-label' for='{}'>{}</label></div>", k, k, v, k, k)
-				neutron.qs("#hotkey-buildings-form").insertAdjacentHTML("afterbegin", html)
-	    }
+				neutron.qs(id).insertAdjacentHTML("afterbegin", html)
+    }
+		; insert the category label which is the key of the initial config
+		html := neutron.FormatHTML("<p class='slight ae-2' style='text-transform: capitalize;'>{}</p>", key)
+		neutron.qs(id).insertAdjacentHTML("afterbegin", html)
 	}
 }
 
