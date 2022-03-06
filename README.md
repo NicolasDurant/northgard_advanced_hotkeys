@@ -1,5 +1,7 @@
 # Northgard Advanced Hotkeys
 
+[![Join the chat at https://gitter.im/northgard_advanced_hotkeys/community](https://badges.gitter.im/northgard_advanced_hotkeys/community.svg)](https://gitter.im/northgard_advanced_hotkeys/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 CONTENTS OF THIS FILE
 ---------------------
 * [Introduction](#-introduction)
